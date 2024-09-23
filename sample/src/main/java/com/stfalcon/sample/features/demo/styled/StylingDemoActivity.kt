@@ -54,7 +54,7 @@ class StylingDemoActivity : BaseActivity() {
     private fun openViewer(startPosition: Int, imageView: ImageView) {
         val posters = Demo.posters.toMutableList()
 
-        val builder = StfalconImageViewer.Builder<Poster>(this, posters, ::loadPosterImage)
+        val builder = StfalconImageViewer.Builder(this, posters, ::loadPosterImage)
             .withStartPosition(startPosition)
             .withImageChangeListener { position ->
                 if (options.isPropertyEnabled(SHOW_TRANSITION)) {

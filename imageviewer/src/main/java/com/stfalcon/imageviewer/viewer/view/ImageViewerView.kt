@@ -18,6 +18,7 @@ package com.stfalcon.imageviewer.viewer.view
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
@@ -25,7 +26,6 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.RelativeLayout
-import androidx.core.view.GestureDetectorCompat
 import com.stfalcon.imageviewer.R
 import com.stfalcon.imageviewer.common.extensions.addOnPageChangeListener
 import com.stfalcon.imageviewer.common.extensions.animateAlpha
@@ -96,7 +96,7 @@ internal class ImageViewerView<T> @JvmOverloads constructor(
     private var imagesAdapter: ImagesPagerAdapter<T>? = null
 
     private var directionDetector: SwipeDirectionDetector
-    private var gestureDetector: GestureDetectorCompat
+    private var gestureDetector: GestureDetector
     private var scaleDetector: ScaleGestureDetector
     private lateinit var swipeDismissHandler: SwipeToDismissHandler
 
@@ -331,7 +331,7 @@ internal class ImageViewerView<T> @JvmOverloads constructor(
         SwipeDirectionDetector(context) { swipeDirection = it }
 
     private fun createGestureDetector() =
-        GestureDetectorCompat(context, SimpleOnGestureListener(
+        GestureDetector(context, SimpleOnGestureListener(
             onSingleTap = {
                 if (imagesPager.isIdle) {
                     handleSingleTap(it, isOverlayWasClicked)

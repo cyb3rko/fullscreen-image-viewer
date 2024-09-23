@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.stfalcon.sample.R
 import com.stfalcon.sample.databinding.FragmentDemoCardBinding
 
 class DemoCardFragment : Fragment() {
@@ -61,7 +60,7 @@ class DemoCardFragment : Fragment() {
         if (context is OnCardActionListener) {
             cardActionListener = context
         } else {
-            throw RuntimeException(context.toString() + " must to implement the OnCardActionListener")
+            throw RuntimeException("$context must to implement the OnCardActionListener")
         }
     }
 

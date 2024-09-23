@@ -21,7 +21,7 @@ class PostersGridView @JvmOverloads constructor(
     var onPosterClick: ((Int, ImageView) -> Unit)? = null
 
     val imageViews by lazy {
-        mapOf<Int, ImageView>(
+        mapOf(
             0 to binding.postersFirstImage,
             1 to binding.postersSecondImage,
             2 to binding.postersThirdImage,

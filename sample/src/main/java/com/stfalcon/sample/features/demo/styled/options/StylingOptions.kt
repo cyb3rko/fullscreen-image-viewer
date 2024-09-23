@@ -11,7 +11,6 @@ import com.stfalcon.sample.features.demo.styled.options.StylingOptions.Property.
 import com.stfalcon.sample.features.demo.styled.options.StylingOptions.Property.SHOW_TRANSITION
 import com.stfalcon.sample.features.demo.styled.options.StylingOptions.Property.SWIPE_TO_DISMISS
 import com.stfalcon.sample.features.demo.styled.options.StylingOptions.Property.ZOOMING
-import com.stfalcon.sample.features.demo.styled.options.StylingOptions.Property.values
 
 class StylingOptions {
 
@@ -35,7 +34,7 @@ class StylingOptions {
                 context.resources.getStringArray(R.array.styling_options),
                 options.values.toBooleanArray()
             ) { _, indexSelected, isChecked ->
-                options[values()[indexSelected]] = isChecked
+                options[Property.entries[indexSelected]] = isChecked
             }.show()
     }
 
